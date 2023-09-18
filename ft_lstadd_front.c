@@ -13,6 +13,6 @@
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-    new -> next = *lst; // sets the node 'new' at the beginning of the linked list (the head)
-    *lst = new; // Updates the head of the linked list so that the node 'new' is the first node of the linked list
+    new->next = *lst;
+    *lst = new;
 }
