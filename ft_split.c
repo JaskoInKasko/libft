@@ -6,7 +6,7 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:45:57 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/19 12:04:31 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:31:23 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,7 +20,7 @@ static int	ft_count_substrings(char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c || s[i] == ' ' || s[i] == '|')
+		if (s[i] == c)
 			i++;
 		else
 		{
@@ -32,20 +32,16 @@ static int	ft_count_substrings(char const *s, char c)
 	return (j);
 }
 
-static void	ft_free_string(char **s1, int j)
+static void	ft_free_string(char **s1)
 {
-	int 	c;
-	char	**begin;
+	int		i;
 
-	c = 0;
-	begin = s1;
-	while(c <= j)
-	{
-		free(*s1);
-		c++;
-		s1++;
-	}
-	free(begin);
+	if (s1 == NULL)
+		return ;
+	i = 0;
+	while (s1[i])
+		free(s1[i++]);
+	free(s1);
 }
 
 static char	*ft_split_substring(char const *start, char const *finish)
@@ -87,27 +83,44 @@ char	**ft_split(char const *s, char c)
 		if (*s == c)
 		{
 			if (s != start)
-				s1[i++] = ft_split_substring(start, s);
-			if(s1[i] == NULL)
 			{
-				ft_free_string(s1, i);
-				return (NULL);
+				s1[i] = ft_split_substring(start, s);
+				if(s1[i] == NULL)
+					return (ft_free_string(s1), NULL);
+				i++;
 			}
 			start = s + 1;
 		}
 		s++;
 	}
 	if (s != start)
-		s1[i++] = ft_split_substring(start, s);
+	{
+		s1[i] = ft_split_substring(start, s);
+		if (s1[i] == NULL)
+			return (ft_free_string(s1), NULL);
+		i++;
+	}
 	s1[i] = 0;
 	return (s1);
 }
-/*#include <stdio.h>
-int main(void) 
+/*
+#include <stdio.h>
+int main(int argc, char **argv) 
 {
-	char	str[400] = "Jujutsu Kaisen Kaisen Kaisen";
-    char	**result = ft_split(str, 'i');
-	int		i;
+	if (argc != 3)
+		return 0;
+    char	**result = ft_split(argv[1], argv[2][0]);
+	if (result == NULL)
+		return 0;
+	for (int i = 0; result[i] != NULL; i++)
+	{
+		printf("%i: %s\n", i, result[i]);
+	}
+	ft_free_string(result);
+	return 0;
+}
+*/
+	/*int		i;
 
 	i = 0;
 	if (result) 
@@ -121,4 +134,5 @@ int main(void)
 		ft_free_string(result, i);
 	}
 	return 0;
+
 }*/
