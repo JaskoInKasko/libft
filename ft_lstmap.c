@@ -6,12 +6,12 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:55:52 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/18 10:56:05 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:27:50 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    
+
 }

@@ -6,12 +6,12 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:54:57 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/18 10:55:09 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:24:28 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    
+
 }

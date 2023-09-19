@@ -6,12 +6,12 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:53:34 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/18 10:53:45 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:24:11 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-    
+
 }

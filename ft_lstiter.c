@@ -6,12 +6,12 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:55:36 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/18 10:55:46 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:24:43 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    
+
 }

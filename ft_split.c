@@ -6,7 +6,7 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:45:57 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/16 22:18:11 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:04:31 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -30,6 +30,22 @@ static int	ft_count_substrings(char const *s, char c)
 		}
 	}
 	return (j);
+}
+
+static void	ft_free_string(char **s1, int j)
+{
+	int 	c;
+	char	**begin;
+
+	c = 0;
+	begin = s1;
+	while(c <= j)
+	{
+		free(*s1);
+		c++;
+		s1++;
+	}
+	free(begin);
 }
 
 static char	*ft_split_substring(char const *start, char const *finish)
@@ -72,6 +88,11 @@ char	**ft_split(char const *s, char c)
 		{
 			if (s != start)
 				s1[i++] = ft_split_substring(start, s);
+			if(s1[i] == NULL)
+			{
+				ft_free_string(s1, i);
+				return (NULL);
+			}
 			start = s + 1;
 		}
 		s++;
@@ -81,11 +102,10 @@ char	**ft_split(char const *s, char c)
 	s1[i] = 0;
 	return (s1);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void) 
 {
-	char	str[400] = "Jujutsu Kaisen Kaisen Kasien";
+	char	str[400] = "Jujutsu Kaisen Kaisen Kaisen";
     char	**result = ft_split(str, 'i');
 	int		i;
 
@@ -98,8 +118,7 @@ int main(void)
 			//free(result[i]);
 			i++;
 		}
-		ft_free_mem(result);
+		ft_free_string(result, i);
 	}
 	return 0;
-}
-*/
+}*/
