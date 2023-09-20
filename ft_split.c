@@ -106,22 +106,6 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (s1);
 }
-/*
-#include <stdio.h>
-int main(int argc, char **argv) 
-{
-	if (argc != 3)
-		return 0;
-    char	**result = ft_split(argv[1], argv[2][0]);
-	if (result == NULL)
-		return 0;
-	for (int i = 0; result[i] != NULL; i++)
-	{
-		printf("%i: %s\n", i, result[i]);
-	}
-	ft_free_string(result);
-	return 0;
-}*/
 /*#include <stdio.h>
 int main(void)
 { 
