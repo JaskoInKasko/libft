@@ -6,7 +6,7 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:45:57 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/19 19:09:08 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:27:44 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -97,6 +97,8 @@ char	**ft_split(char const *s, char c)
 	int			subs_count;
 	char		**s1;
 
+	if (s == NULL)
+		return (NULL);
 	subs_count = ft_count_substrings(s, c);
 	s1 = (char **)malloc((subs_count + 1) * sizeof(char *));
 	if (!s1)
@@ -112,7 +114,7 @@ int main(void)
 	int		i;
 	char	**result;
 
-	result = ft_split("qqqqqqqqqqqqqhelloq.", 'q');
+	result = ft_split("", '\0');
 	if (result == NULL)
 	{
 		printf("IM NULL");
