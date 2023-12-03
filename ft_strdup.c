@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s)
 	char	*s1;
 
 	i = 0;
-	size = ft_strlen(s);
-	if (s == 0)
+	if (s == NULL)
 		return (NULL);
+	size = ft_strlen(s);
 	s1 = (char *)malloc((size + 1) * sizeof(char));
 	if (s1 == NULL)
 		return (NULL);
@@ -32,14 +32,3 @@ char	*ft_strdup(const char *s)
 	s1[i] = '\0';
 	return (s1);
 }
-/*#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char	s[15] = "Jujutsu Kaisen";
-	char	*m;
-	m = ft_strdup(s);
-	printf("%s\n", m);
-	free(m);
-	return (0);
-}*/

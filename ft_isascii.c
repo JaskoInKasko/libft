@@ -17,13 +17,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-/*#include <stdio.h>
-#include <ctype.h>
-int	main(void)
-{
-	unsigned char	a;
-
-	a = 'S';
-	printf("%d\n", ft_isascii(a));
-	printf("%d\n", isascii(a));
-}*/	

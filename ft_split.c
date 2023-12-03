@@ -6,7 +6,7 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:45:57 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/09/21 12:27:44 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:56:02 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -108,28 +108,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (s1);
 }
-/*#include <stdio.h>
-int main(void)
-{ 
-	int		i;
-	char	**result;
-
-	result = ft_split("", '\0');
-	if (result == NULL)
-	{
-		printf("IM NULL");
-		return (1);
-	}
-	i = 0;
-	if (result) 
-	{
-		while (result[i] != NULL)
-		{
-			printf("%s\n", result[i]);
-			free(result[i]);
-			i++;
-		}
-		free(result);
-	}
-	return 0;
-}*/
